@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/destinations/destinations",
+    "pages/result/result",
+    "pages/card/card",
+    "pages/mine/mine",
+    "pages/feedback/feedback"
+  ],
+  "window": {
+    "navigationBarTitleText": "妈呀要去吗",
+    "navigationBarBackgroundColor": "#F7F1E8",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F1E8"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

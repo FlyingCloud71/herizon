@@ -1,0 +1,23 @@
+<view class="page font-{{fontLevel}}">
+  <view class="eyebrow">第一步</view>
+  <view class="title">这次出门，你更在意什么？</view>
+  <view class="subtitle">选几件最想照顾好的事，用来判断你选的地方是否适合这次去。</view>
+
+  <view class="panel">
+    <view class="section-title">舒服走路大概能走</view>
+    <view class="walk-value">{{maxWalkMinutes}} 分钟</view>
+    <slider min="10" max="60" step="5" value="{{maxWalkMinutes}}" activeColor="#ffd0a6" backgroundColor="#eadbc9" block-color="#ffd0a6" bindchange="onWalkChange" />
+  </view>
+
+  <view class="panel">
+    <view class="section-title">这次你希望</view>
+    <view class="option" wx:for="{{options}}" wx:key="key" bindtap="toggle" data-key="{{item.key}}">
+      <view class="option-copy">
+        <view class="option-title">{{item.title}}</view>
+      </view>
+      <switch checked="{{profile[item.key]}}" color="#ffd0a6" />
+    </view>
+  </view>
+
+  <button class="primary-btn" bindtap="next">选择想去的地方</button>
+</view>

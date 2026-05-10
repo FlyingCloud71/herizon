@@ -1,0 +1,372 @@
+page {
+  min-height: 100%;
+  background: linear-gradient(180deg, #f7f1e8 0%, #fbf7ef 48%, #f4eadf 100%);
+  color: #343331;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+view,
+text,
+button {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 34rpx 28rpx 60rpx;
+}
+
+.eyebrow {
+  color: #8a6b4d;
+  font-size: 24rpx;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.title {
+  margin-top: 12rpx;
+  color: #2f2d2a;
+  font-size: 46rpx;
+  font-weight: 800;
+  line-height: 1.16;
+}
+
+.subtitle {
+  margin-top: 18rpx;
+  color: #4f4a44;
+  font-size: 29rpx;
+  line-height: 1.6;
+}
+
+.panel {
+  margin-top: 28rpx;
+  padding: 28rpx;
+  border: 1rpx solid rgba(191, 164, 139, 0.72);
+  border-radius: 8rpx;
+  background-color: rgba(255, 250, 242, 0.74);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.54) 1rpx, transparent 1.6rpx);
+  background-size: 11rpx 11rpx;
+  -webkit-backdrop-filter: blur(38rpx) saturate(1.45);
+  backdrop-filter: blur(38rpx) saturate(1.45);
+  box-shadow: 0 18rpx 44rpx rgba(92, 71, 52, 0.1);
+}
+
+.section-title {
+  color: #343331;
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.muted {
+  color: #5f5850;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92rpx;
+  padding: 18rpx 24rpx;
+  margin-top: 28rpx;
+  border-radius: 8rpx;
+  font-size: 31rpx;
+  font-weight: 800;
+  line-height: 1.28;
+  box-shadow: none;
+}
+
+.primary-btn {
+  background: #ffd0a6;
+  color: #6b4a37;
+  box-shadow: 0 16rpx 30rpx rgba(255, 208, 166, 0.32);
+}
+
+.secondary-btn {
+  border: 1rpx solid rgba(177, 135, 102, 0.78);
+  background-color: rgba(255, 250, 242, 0.72);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.48) 1rpx, transparent 1.6rpx);
+  background-size: 11rpx 11rpx;
+  -webkit-backdrop-filter: blur(30rpx) saturate(1.35);
+  backdrop-filter: blur(30rpx) saturate(1.35);
+  color: #7a4b2f;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+  margin-top: 20rpx;
+}
+
+.tag {
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  background: #f0e4d2;
+  color: #735f4b;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.danger {
+  color: #b86a5b;
+}
+
+.warn {
+  color: #a76d36;
+}
+
+.ok {
+  color: #6f8e91;
+}
+
+.page.font-large .eyebrow {
+  font-size: 28rpx;
+}
+
+.page.font-large .title {
+  font-size: 52rpx;
+}
+
+.page.font-large .subtitle,
+.page.font-large .muted,
+.page.font-large .preview-row,
+.page.font-large .follow-subtitle,
+.page.font-large .soft-note,
+.page.font-large .backup-text,
+.page.font-large .album-line {
+  font-size: 32rpx;
+}
+
+.page.font-large .section-title,
+.page.font-large .card-section-title,
+.page.font-large .preview-title,
+.page.font-large .destination-name,
+.page.font-large .history-name,
+.page.font-large .empty-title,
+.page.font-large .question-title,
+.page.font-large .option-title,
+.page.font-large .reminder-title,
+.page.font-large .field-label,
+.page.font-large .date-label {
+  font-size: 36rpx;
+}
+
+.page.font-large .primary-btn,
+.page.font-large .secondary-btn,
+.page.font-large .compact-btn,
+.page.font-large .modal-btn {
+  font-size: 34rpx;
+  min-height: 104rpx;
+}
+
+.page.font-large .tag,
+.page.font-large .mini-tag,
+.page.font-large .card-kicker,
+.page.font-large .card-level,
+.page.font-large .score-chip,
+.page.font-large .info-label,
+.page.font-large .search-icon,
+.page.font-large .trip-entry-action,
+.page.font-large .modal-close,
+.page.font-large .destination-area,
+.page.font-large .option-desc,
+.page.font-large .metric-label,
+.page.font-large .score-label,
+.page.font-large .reminder-desc,
+.page.font-large .saved-note,
+.page.font-large .font-control-desc,
+.page.font-large .search-placeholder,
+.page.font-large .input-placeholder {
+  font-size: 28rpx;
+}
+
+.page.font-large .walk-value {
+  font-size: 62rpx;
+}
+
+.page.font-large .score {
+  font-size: 96rpx;
+}
+
+.page.font-large .level,
+.page.font-large .card-title {
+  font-size: 44rpx;
+}
+
+.page.font-large .bullet,
+.page.font-large .plan-meta,
+.page.font-large .point-text,
+.page.font-large .choice,
+.page.font-large .history-meta,
+.page.font-large .history-note,
+.page.font-large .empty-desc,
+.page.font-large .info-value,
+.page.font-large .date-value,
+.page.font-large .date-placeholder,
+.page.font-large .search-input,
+.page.font-large .number-input,
+.page.font-large .feedback-textarea,
+.page.font-large .empty-state {
+  font-size: 32rpx;
+}
+
+.page.font-large .metric-value {
+  font-size: 34rpx;
+}
+
+.page.font-large .score-number {
+  font-size: 34rpx;
+}
+
+.page.font-large .score-level {
+  font-size: 24rpx;
+}
+
+.page.font-large .point-label,
+.page.font-large .pin {
+  font-size: 28rpx;
+}
+
+.page.font-large .font-control-title {
+  font-size: 32rpx;
+}
+
+.page.font-large .home-kicker {
+  font-size: 32rpx;
+}
+
+.page.font-large .font-option {
+  font-size: 28rpx;
+}
+
+.page.font-large .photo {
+  font-size: 32rpx;
+}
+
+.page.font-xlarge .eyebrow {
+  font-size: 31rpx;
+}
+
+.page.font-xlarge .title {
+  font-size: 60rpx;
+}
+
+.page.font-xlarge .subtitle,
+.page.font-xlarge .muted,
+.page.font-xlarge .preview-row,
+.page.font-xlarge .follow-subtitle,
+.page.font-xlarge .soft-note,
+.page.font-xlarge .backup-text,
+.page.font-xlarge .album-line {
+  font-size: 36rpx;
+}
+
+.page.font-xlarge .section-title,
+.page.font-xlarge .card-section-title,
+.page.font-xlarge .preview-title,
+.page.font-xlarge .destination-name,
+.page.font-xlarge .history-name,
+.page.font-xlarge .empty-title,
+.page.font-xlarge .question-title,
+.page.font-xlarge .option-title,
+.page.font-xlarge .reminder-title,
+.page.font-xlarge .field-label,
+.page.font-xlarge .date-label {
+  font-size: 40rpx;
+}
+
+.page.font-xlarge .primary-btn,
+.page.font-xlarge .secondary-btn,
+.page.font-xlarge .compact-btn,
+.page.font-xlarge .modal-btn {
+  font-size: 38rpx;
+  min-height: 116rpx;
+}
+
+.page.font-xlarge .tag,
+.page.font-xlarge .mini-tag,
+.page.font-xlarge .card-kicker,
+.page.font-xlarge .card-level,
+.page.font-xlarge .score-chip,
+.page.font-xlarge .info-label,
+.page.font-xlarge .search-icon,
+.page.font-xlarge .trip-entry-action,
+.page.font-xlarge .modal-close,
+.page.font-xlarge .destination-area,
+.page.font-xlarge .option-desc,
+.page.font-xlarge .metric-label,
+.page.font-xlarge .score-label,
+.page.font-xlarge .reminder-desc,
+.page.font-xlarge .saved-note,
+.page.font-xlarge .font-control-desc,
+.page.font-xlarge .search-placeholder,
+.page.font-xlarge .input-placeholder {
+  font-size: 31rpx;
+}
+
+.page.font-xlarge .walk-value {
+  font-size: 72rpx;
+}
+
+.page.font-xlarge .score {
+  font-size: 108rpx;
+}
+
+.page.font-xlarge .level,
+.page.font-xlarge .card-title {
+  font-size: 50rpx;
+}
+
+.page.font-xlarge .bullet,
+.page.font-xlarge .plan-meta,
+.page.font-xlarge .point-text,
+.page.font-xlarge .choice,
+.page.font-xlarge .history-meta,
+.page.font-xlarge .history-note,
+.page.font-xlarge .empty-desc,
+.page.font-xlarge .info-value,
+.page.font-xlarge .date-value,
+.page.font-xlarge .date-placeholder,
+.page.font-xlarge .search-input,
+.page.font-xlarge .number-input,
+.page.font-xlarge .feedback-textarea,
+.page.font-xlarge .empty-state {
+  font-size: 36rpx;
+}
+
+.page.font-xlarge .metric-value {
+  font-size: 38rpx;
+}
+
+.page.font-xlarge .score-number {
+  font-size: 38rpx;
+}
+
+.page.font-xlarge .score-level {
+  font-size: 27rpx;
+}
+
+.page.font-xlarge .point-label,
+.page.font-xlarge .pin {
+  font-size: 31rpx;
+}
+
+.page.font-xlarge .font-control-title {
+  font-size: 36rpx;
+}
+
+.page.font-xlarge .home-kicker {
+  font-size: 36rpx;
+}
+
+.page.font-xlarge .font-option {
+  font-size: 31rpx;
+}
+
+.page.font-xlarge .photo {
+  font-size: 36rpx;
+}

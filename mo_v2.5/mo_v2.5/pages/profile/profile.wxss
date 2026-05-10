@@ -1,0 +1,37 @@
+.walk-value {
+  margin-top: 18rpx;
+  color: #d8793f;
+  font-size: 52rpx;
+  font-weight: 900;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20rpx;
+  min-height: 104rpx;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #eadbc9;
+}
+
+.option:last-child {
+  border-bottom: 0;
+}
+
+.option-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.option-title {
+  color: #343331;
+  font-size: 32rpx;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.option switch {
+  flex: 0 0 auto;
+}

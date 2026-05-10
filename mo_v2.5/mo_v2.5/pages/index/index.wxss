@@ -1,0 +1,290 @@
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 136rpx;
+}
+
+.home-copy,
+.font-control,
+.gallery,
+.home-card-preview,
+.home-action,
+.home-secondary {
+  position: relative;
+  z-index: 1;
+}
+
+.home-copy {
+  flex: 0 0 auto;
+  margin-top: 38rpx;
+  padding: 28rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.68);
+  border-radius: 8rpx;
+  background-color: rgba(255, 250, 242, 0.52);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.62) 1rpx, transparent 1.7rpx);
+  background-size: 9rpx 9rpx;
+  -webkit-backdrop-filter: blur(58rpx) saturate(1.55);
+  backdrop-filter: blur(58rpx) saturate(1.55);
+  box-shadow: 0 24rpx 56rpx rgba(92, 71, 52, 0.1);
+}
+
+.home-kicker {
+  color: #6b5947;
+  font-size: 30rpx;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-bg-softener {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.32) 0%, rgba(255, 250, 242, 0.46) 54%, rgba(255, 250, 242, 0.76) 100%);
+}
+
+.font-control {
+  position: absolute;
+  top: 34rpx;
+  right: 28rpx;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  max-width: 560rpx;
+  padding: 12rpx;
+  border: 1rpx solid rgba(238, 222, 203, 0.86);
+  border-radius: 999rpx;
+  background-color: rgba(255, 250, 242, 0.58);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.68) 1rpx, transparent 1.7rpx);
+  background-size: 9rpx 9rpx;
+  -webkit-backdrop-filter: blur(58rpx) saturate(1.55);
+  backdrop-filter: blur(58rpx) saturate(1.55);
+  box-shadow: 0 16rpx 36rpx rgba(92, 71, 52, 0.1);
+}
+
+.font-control-title {
+  color: #343331;
+  font-size: 24rpx;
+  font-weight: 900;
+  line-height: 52rpx;
+}
+
+.font-options {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.font-option {
+  min-width: 68rpx;
+  min-height: 52rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  background: rgba(240, 228, 210, 0.78);
+  color: #735f4b;
+  font-size: 23rpx;
+  font-weight: 900;
+  line-height: 52rpx;
+  text-align: center;
+}
+
+.font-option.active {
+  background: #ffd0a6;
+  color: #6b4a37;
+  box-shadow: 0 10rpx 22rpx rgba(255, 208, 166, 0.36);
+}
+
+.gallery {
+  width: 100%;
+  margin-top: 32rpx;
+  white-space: nowrap;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 22rpx;
+  padding-right: 28rpx;
+}
+
+.gallery-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 430rpx;
+  height: 238rpx;
+  overflow: hidden;
+  border: 1rpx solid rgba(191, 164, 139, 0.72);
+  border-radius: 8rpx;
+  background: #eadbc9;
+  box-shadow: 0 18rpx 36rpx rgba(92, 71, 52, 0.12);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 92rpx;
+  background: linear-gradient(180deg, rgba(47, 45, 42, 0) 0%, rgba(47, 45, 42, 0.62) 100%);
+}
+
+.gallery-name {
+  position: absolute;
+  left: 22rpx;
+  right: 22rpx;
+  bottom: 18rpx;
+  color: #fffaf2;
+  font-size: 28rpx;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.home-card-preview {
+  margin-top: 24rpx;
+  padding: 28rpx 30rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.7);
+  border-radius: 8rpx;
+  background-color: rgba(255, 250, 242, 0.48);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.66) 1rpx, transparent 1.7rpx);
+  background-size: 9rpx 9rpx;
+  -webkit-backdrop-filter: blur(58rpx) saturate(1.55);
+  backdrop-filter: blur(58rpx) saturate(1.55);
+  box-shadow: 0 22rpx 50rpx rgba(92, 71, 52, 0.1);
+}
+
+.preview-title {
+  color: #274b42;
+  font-size: 42rpx;
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.preview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 20rpx;
+}
+
+.preview-tag {
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: rgba(226, 211, 187, 0.82);
+  color: #796a5b;
+  font-size: 25rpx;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.home-action {
+  width: 100%;
+  margin-top: 28rpx;
+  margin-bottom: 4rpx;
+  background: #ffd0a6;
+  color: #6b4a37;
+  box-shadow: 0 16rpx 30rpx rgba(255, 208, 166, 0.32);
+}
+
+.home-secondary {
+  width: 100%;
+}
+
+.page.font-xlarge .font-control {
+  align-items: flex-start;
+}
+
+.page.font-large.home {
+  padding-top: 112rpx;
+}
+
+.page.font-xlarge.home {
+  padding-top: 96rpx;
+}
+
+.page.font-large .font-control {
+  max-width: 610rpx;
+}
+
+.page.font-xlarge .font-control {
+  left: 28rpx;
+  right: 28rpx;
+  justify-content: flex-start;
+}
+
+.page.font-large .gallery-card,
+.page.font-xlarge .gallery-card {
+  width: 500rpx;
+  height: 258rpx;
+}
+
+.page.font-large .gallery-name {
+  font-size: 32rpx;
+}
+
+.page.font-xlarge .gallery-name {
+  font-size: 36rpx;
+}
+
+.page.font-large .preview-title {
+  font-size: 46rpx;
+}
+
+.page.font-xlarge .preview-title {
+  font-size: 50rpx;
+}
+
+.page.font-large .preview-tag {
+  font-size: 29rpx;
+}
+
+.page.font-xlarge .preview-tag {
+  font-size: 32rpx;
+}
+
+.page.font-large .home-copy {
+  margin-top: 46rpx;
+}
+
+.page.font-xlarge .home-copy {
+  margin-top: 58rpx;
+}
+
+.page.font-large .gallery {
+  margin-top: 40rpx;
+}
+
+.page.font-xlarge .gallery {
+  margin-top: 48rpx;
+}
+
+.page.font-large .home-action {
+  margin-top: 56rpx;
+}
+
+.page.font-xlarge .home-action {
+  margin-top: 68rpx;
+}

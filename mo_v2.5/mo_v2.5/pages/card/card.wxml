@@ -1,0 +1,98 @@
+<view class="page font-{{fontLevel}}">
+  <view class="eyebrow">你的安心慢游卡</view>
+  <view class="title">这次不用赶路，慢慢走就好</view>
+  <view class="subtitle">把出行日期保存下来，出发前一天可以提醒你看天气，回来后也能补充真实体验。</view>
+
+  <view class="slow-card">
+    <view class="card-top">
+      <view>
+        <view class="card-kicker">安心慢游卡</view>
+        <view class="card-title">{{plan.title}}</view>
+      </view>
+      <view class="card-level {{result.tone}}">{{result.displayLevel}}</view>
+    </view>
+
+    <view class="comfort-line">按自己的节奏来。累了就坐，想早点回也可以。</view>
+
+    <view class="info-grid">
+      <view class="info-item">
+        <text class="info-label">出发时间</text>
+        <text class="info-value">{{plan.bestTime}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">走路节奏</text>
+        <text class="info-value">{{plan.walkTarget}}</text>
+      </view>
+      <view class="info-item wide">
+        <text class="info-label">下车点</text>
+        <text class="info-value">{{plan.dropoff}}</text>
+      </view>
+    </view>
+
+    <view class="card-section">
+      <view class="card-section-title">可以坐一会儿</view>
+      <view class="mini-tag-row">
+        <text class="mini-tag" wx:for="{{plan.restStops}}" wx:key="*this">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="card-section">
+      <view class="card-section-title">厕所提醒</view>
+      <view class="soft-note" wx:for="{{plan.restroomTips}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="trip-entry" bindtap="openTripModal">
+    <view>
+      <view class="card-section-title">什么时候去？</view>
+      <view class="follow-subtitle" wx:if="{{tripPlan.date}}">
+        {{tripPlan.date}} 出发
+        <text wx:if="{{tripPlan.weatherReminder}}">，出发前一天提醒天气</text>
+      </view>
+      <view class="follow-subtitle" wx:else>选择出行日期，保存到我的出行记录。</view>
+    </view>
+    <view class="trip-entry-action">{{savedTripPlan ? '已保存' : '设置'}}</view>
+  </view>
+
+  <view class="follow-panel" wx:if="{{savedTripPlan}}">
+    <view class="card-section-title">回来后补充一点真实体验</view>
+    <view class="follow-subtitle">这些反馈会帮助后来的人判断厕所、座椅、人流和走路压力。</view>
+    <button class="secondary-btn compact-btn" bindtap="goFeedback">填写景点反馈</button>
+  </view>
+
+  <button class="primary-btn" open-type="share">分享给同行的人</button>
+  <button class="secondary-btn" bindtap="goMine">我的出行记录</button>
+
+  <view class="modal-mask" wx:if="{{showTripModal}}" bindtap="closeTripModal">
+    <view class="trip-modal" catchtap="noop">
+      <view class="modal-top">
+        <view>
+          <view class="card-section-title">什么时候去？</view>
+          <view class="follow-subtitle">保存后会进入我的出行记录。出发前一天，可以提醒你查看天气变化。</view>
+        </view>
+        <view class="modal-close" bindtap="closeTripModal">×</view>
+      </view>
+
+      <picker mode="date" value="{{tripPlan.date}}" bindchange="onTripDateChange">
+        <view class="date-picker">
+          <text class="date-label">出行日期</text>
+          <text class="date-value" wx:if="{{tripPlan.date}}">{{tripPlan.date}}</text>
+          <text class="date-placeholder" wx:else>选择日期</text>
+        </view>
+      </picker>
+
+      <view class="reminder-row">
+        <view>
+          <view class="reminder-title">出发前一天提醒天气</view>
+          <view class="reminder-desc">提醒温度、降雨、暴晒和风力，帮助决定是否调整行程。</view>
+        </view>
+        <switch checked="{{tripPlan.weatherReminder}}" color="#ffd0a6" bindchange="toggleWeatherReminder" />
+      </view>
+
+      <view class="modal-actions">
+        <button class="secondary-btn modal-btn" bindtap="closeTripModal">稍后再说</button>
+        <button class="primary-btn modal-btn" bindtap="saveTripPlan">保存慢游计划</button>
+      </view>
+    </view>
+  </view>
+</view>

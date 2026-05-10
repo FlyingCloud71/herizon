@@ -1,0 +1,40 @@
+<view class="page font-{{fontLevel}}">
+  <view class="eyebrow">第三步</view>
+  <view class="title">{{destination.name}}适合这次去吗？</view>
+  <view class="subtitle">根据你刚才选择的出行状态，先看整体适配度，再看需要提前确认的事。</view>
+
+  <view class="result-box {{result.tone}}">
+    <view class="level">{{result.displayLevel}}</view>
+    <view class="score">{{result.score}}</view>
+    <view class="score-label">出行适配分</view>
+  </view>
+
+  <view class="panel" wx:if="{{result.tone !== 'danger'}}">
+    <view class="section-title">比较友好的地方</view>
+    <view class="bullet" wx:for="{{result.highlights}}" wx:key="*this">{{item}}</view>
+    <view class="muted" wx:if="{{result.highlights.length === 0}}">当前目的地没有特别突出的友好点，建议把游览范围收短一点。</view>
+  </view>
+
+  <view class="panel">
+    <view class="section-title">出发前先确认</view>
+    <view class="bullet warn-text" wx:for="{{result.issues}}" wx:key="*this">{{item}}</view>
+    <view class="muted" wx:if="{{result.issues.length === 0}}">暂时没有明显压力点，仍建议保留休息和返程弹性。</view>
+  </view>
+
+  <view class="panel">
+    <view class="section-title" wx:if="{{result.tone !== 'danger'}}">出行要点</view>
+    <view class="section-title" wx:else>更轻松的出行要点</view>
+    <view class="plan-meta">{{result.plan.duration}} · {{result.plan.walkTarget}}</view>
+    <view class="point-row">
+      <text class="point-label">建议时间</text>
+      <text class="point-text">{{result.plan.bestTime}}</text>
+    </view>
+    <view class="point-row">
+      <text class="point-label">下车点</text>
+      <text class="point-text">{{result.plan.dropoff}}</text>
+    </view>
+  </view>
+
+  <button class="primary-btn" bindtap="makeCard">生成你的慢游卡</button>
+  <button class="secondary-btn" bindtap="chooseAgain">换一个目的地</button>
+</view>

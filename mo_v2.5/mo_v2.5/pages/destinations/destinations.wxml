@@ -1,0 +1,41 @@
+<view class="page font-{{fontLevel}}">
+  <view class="eyebrow">第二步</view>
+  <view class="title">选择你想去的地方</view>
+  <view class="subtitle">选择一个目的地，看看它和这次的状态是否匹配。</view>
+
+  <view class="search-box">
+    <text class="search-icon">⌕</text>
+    <input class="search-input" value="{{query}}" placeholder="搜索景点、区域或关键词" placeholder-class="search-placeholder" bindinput="onSearchInput" />
+  </view>
+
+  <view class="empty-state" wx:if="{{isReady && filteredDestinations.length === 0}}">
+    暂时没有匹配的地方，可以换个关键词试试。
+  </view>
+
+  <view class="destination" wx:for="{{filteredDestinations}}" wx:key="id" bindtap="selectDestination" data-id="{{item.id}}">
+    <view class="destination-head">
+      <view>
+        <view class="destination-name">{{item.name}}</view>
+        <view class="destination-area">{{item.area}} · {{item.cover}}</view>
+      </view>
+      <view class="score-chip {{item.previewTone}}">
+        <text class="score-number">{{item.previewScore}}</text>
+        <text class="score-level">适配分</text>
+      </view>
+    </view>
+    <view class="metric-row">
+      <view class="metric">
+        <text class="metric-label">台阶压力</text>
+        <text class="metric-value">{{item.steps}}/5</text>
+      </view>
+      <view class="metric">
+        <text class="metric-label">厕所密度</text>
+        <text class="metric-value">{{item.restroomRateText}}个/时</text>
+      </view>
+      <view class="metric">
+        <text class="metric-label">休息便利</text>
+        <text class="metric-value">{{item.seating}}/5</text>
+      </view>
+    </view>
+  </view>
+</view>

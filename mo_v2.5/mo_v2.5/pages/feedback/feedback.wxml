@@ -1,0 +1,44 @@
+<view class="page font-{{fontLevel}}">
+  <view class="eyebrow">出行后反馈</view>
+  <view class="title">这次去得顺利吗？</view>
+  <view class="subtitle" wx:if="{{trip}}">{{trip.destination.name}} · {{trip.tripDate}}。你的反馈会帮助后来的人判断厕所、座椅、人流和走路压力。</view>
+  <view class="subtitle" wx:else>没有找到对应的出行计划，可以从「我的出行记录」重新进入。</view>
+
+  <view class="feedback-card" wx:if="{{trip}}">
+    <view class="question-block">
+      <view class="question-title">走路压力</view>
+      <view class="choice-row">
+        <view class="choice {{feedback.walkFeeling === item.value ? 'active' : ''}}" wx:for="{{options.walkFeeling}}" wx:key="value" data-field="walkFeeling" data-value="{{item.value}}" bindtap="chooseOption">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="question-block">
+      <view class="question-title">厕所好找吗？</view>
+      <view class="choice-row">
+        <view class="choice {{feedback.restroom === item.value ? 'active' : ''}}" wx:for="{{options.restroom}}" wx:key="value" data-field="restroom" data-value="{{item.value}}" bindtap="chooseOption">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="question-block">
+      <view class="question-title">中途能坐下吗？</view>
+      <view class="choice-row">
+        <view class="choice {{feedback.seating === item.value ? 'active' : ''}}" wx:for="{{options.seating}}" wx:key="value" data-field="seating" data-value="{{item.value}}" bindtap="chooseOption">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="question-block">
+      <view class="question-title">人流感觉</view>
+      <view class="choice-row">
+        <view class="choice {{feedback.crowd === item.value ? 'active' : ''}}" wx:for="{{options.crowd}}" wx:key="value" data-field="crowd" data-value="{{item.value}}" bindtap="chooseOption">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="field-block">
+      <view class="field-label">有没有想提醒后来人的？</view>
+      <textarea class="feedback-textarea" value="{{feedback.note}}" placeholder="比如哪段路最好走、哪个厕所更方便、哪里适合坐一会儿" placeholder-class="input-placeholder" bindinput="onNoteInput" />
+    </view>
+
+    <button class="primary-btn" bindtap="saveFeedback">{{saved ? '已提交，更新反馈' : '提交反馈'}}</button>
+    <button class="secondary-btn" bindtap="backToCard">回到慢游卡</button>
+  </view>
+</view>

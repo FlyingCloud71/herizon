@@ -1,0 +1,44 @@
+<view class="page home font-{{fontLevel}}">
+  <view class="home-bg">
+    <image class="home-bg-image" src="/assets/home-watercolor-bg.jpg" mode="aspectFill" />
+    <view class="home-bg-softener"></view>
+  </view>
+
+  <view class="font-control">
+    <view class="font-control-title">Aa 字体大小</view>
+    <view class="font-options">
+      <view class="font-option {{fontLevel === item.level ? 'active' : ''}}" wx:for="{{fontOptions}}" wx:key="level" data-level="{{item.level}}" bindtap="selectFontLevel">
+        {{item.label}}
+      </view>
+    </view>
+  </view>
+
+  <scroll-view class="gallery" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="gallery-track">
+      <view class="gallery-card" wx:for="{{gallery}}" wx:key="name">
+        <image class="gallery-image" src="{{item.src}}" mode="aspectFill" />
+        <view class="gallery-shade"></view>
+        <view class="gallery-name">{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="home-copy">
+    <view class="home-kicker">给自己的安心出门指南</view>
+    <view class="title">世界很大，我想慢慢看</view>
+    <view class="subtitle">台阶、卫生间、育婴室和座椅，一次看清楚。</view>
+  </view>
+
+  <view class="home-card-preview">
+    <view class="preview-title">景点慢游卡</view>
+    <view class="preview-tags">
+      <view class="preview-tag">少走路安排</view>
+      <view class="preview-tag">休息点</view>
+      <view class="preview-tag">厕所提醒</view>
+      <view class="preview-tag">天气提醒</view>
+    </view>
+  </view>
+
+  <button class="primary-btn home-action" bindtap="start">开始看看</button>
+  <button class="secondary-btn home-secondary" bindtap="goMine">我的出行记录</button>
+</view>

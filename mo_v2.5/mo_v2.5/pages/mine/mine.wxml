@@ -1,0 +1,30 @@
+<view class="page font-{{fontLevel}}">
+  <view class="eyebrow">我的</view>
+  <view class="title">我的出行记录</view>
+  <view class="subtitle">保存过的出行计划会在这里。再次点开可以查看出行卡，也可以在出行后补充真实体验。</view>
+
+  <view class="empty-history" wx:if="{{plans.length === 0}}">
+    <view class="empty-title">还没有保存出行记录</view>
+    <view class="empty-desc">先选择这次在意的事和想去的目的地，再在慢游卡里设置出行日期。</view>
+    <button class="primary-btn compact-btn" bindtap="startNew">去选择目的地</button>
+  </view>
+
+  <view class="history-card" wx:for="{{plans}}" wx:key="id">
+    <view class="history-main" bindtap="openCard" data-id="{{item.id}}">
+      <view class="history-top">
+        <view>
+          <view class="history-name">{{item.destinationName}}</view>
+          <view class="history-meta">{{item.area}} · {{item.tripDate || '未设置日期'}}</view>
+        </view>
+        <view class="history-level {{item.tone}}">{{item.level}}</view>
+      </view>
+      <view class="history-note" wx:if="{{item.weatherReminder}}">出发前一天天气提醒：已保存</view>
+      <view class="history-note" wx:else>未开启天气提醒</view>
+    </view>
+
+    <view class="history-actions">
+      <button class="secondary-btn history-btn" bindtap="openCard" data-id="{{item.id}}">查看出行卡</button>
+      <button class="primary-btn history-btn" bindtap="openFeedback" data-id="{{item.id}}">{{item.feedbackLabel}}</button>
+    </view>
+  </view>
+</view>
